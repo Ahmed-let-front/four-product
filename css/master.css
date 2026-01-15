@@ -1,0 +1,138 @@
+/* start varibels */
+:root {
+  /* Primary */
+  --Red: #ea5353;
+  --Cyan: #45d3d3;
+  --Orange: #fcaf4a;
+  --Blue: #549ef2;
+
+  /* Neutral */
+  --Grey: #4c4e61;
+  --Grey200: #697077;
+  --White: #ffffff;
+  --marginBlock: 24px;
+}
+/* end varibels */
+/* global values */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+html {
+  font-size: calc(1rem - 1px);
+  line-height: 1.5;
+}
+.border-top {
+  border-top: 5px solid transparent;
+}
+/* end global values */
+/* four broduct mobile */
+.four-product {
+  margin-block: var(--marginBlock);
+  margin-inline: calc(var(--marginBlock) + 6px);
+}
+/* header of content */
+.header {
+  text-align: center;
+  h1 {
+    font-weight: 600;
+    font-size: clamp(24px, 3vw, 37px);
+    color: var(--Grey);
+    margin-block-end: calc(var(--marginBlock) - 12px);
+    span {
+      display: block;
+      font-weight: 200;
+    }
+  }
+  p {
+    color: var(--Grey200);
+    font-weight: 500;
+    margin: auto;
+    margin-block-end: calc(var(--marginBlock) + var(--marginBlock));
+    max-inline-size: 550px;
+  }
+}
+/* four-product content */
+.four-product-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: var(--Grey);
+  h2 {
+    font-size: clamp(21px, 2vw, 26px);
+    margin-block-end: 4px;
+    font-weight: 600;
+  }
+  p {
+    margin-block-end: calc(var(--marginBlock) + 12px);
+    color: var(--Grey200);
+    font-weight: 400;
+  }
+  & > * {
+    background-color: var(--White, #ffffff);
+    padding-block-start: 1.5rem;
+    padding-inline: calc(2rem + 2px);
+    border-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: grid;
+    box-shadow: 0 20px 20px -10px #d7ebff, 0 10px 20px -10px #ddd;
+    max-inline-size: 370px;
+    margin: auto;
+  }
+  .sup {
+    border-color: var(--Cyan);
+  }
+  .team {
+    border-color: var(--Red);
+  }
+  .calc {
+    border-color: var(--Blue);
+  }
+  .karma {
+    border-color: var(--Orange);
+  }
+  figure {
+    justify-self: end;
+    margin-block-end: calc(var(--marginBlock) + 1rem);
+  }
+}
+@media (min-width: 64rem) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+  .four-product-content {
+    display: grid;
+    grid-template-areas:
+      ". c1 ."
+      "c2 c1 c3"
+      "c2 c4 c3"
+      ". c4 .";
+    gap: 35px;
+    .team {
+      grid-area: c1;
+    }
+    .sup {
+      grid-area: c2;
+    }
+    .calc {
+      grid-area: c3;
+    }
+    .karma {
+      grid-area: c4;
+    }
+  }
+}
+footer {
+  display: block;
+  font-size: calc(1rem - 4px);
+  text-align: center;
+  color: hsl(228, 45%, 44%);
+}
