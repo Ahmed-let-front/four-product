@@ -33,6 +33,9 @@ html {
 }
 /* end global values */
 /* four broduct mobile */
+main {
+  position: relative;
+}
 .four-product {
   margin-block: var(--marginBlock);
   margin-inline: calc(var(--marginBlock) + 6px);
@@ -65,7 +68,7 @@ html {
   gap: 30px;
   color: var(--Grey);
   h2 {
-    font-size: clamp(21px, 2vw, 26px);
+    font-size: calc(1rem + 5px);
     margin-block-end: 4px;
     font-weight: 600;
   }
@@ -108,6 +111,10 @@ html {
     display: grid;
     place-items: center;
   }
+  .four-product {
+    margin-block: 4rem;
+    margin-inline: 2rem;
+  }
   .four-product-content {
     display: grid;
     grid-template-areas:
@@ -129,10 +136,14 @@ html {
       grid-area: c4;
     }
   }
-}
-footer {
-  display: block;
-  font-size: calc(1rem - 4px);
-  text-align: center;
-  color: hsl(228, 45%, 44%);
+  .attribution {
+    display: block;
+    font-size: calc(1rem - 4px);
+    text-align: center;
+    color: hsl(228, 45%, 44%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 }
